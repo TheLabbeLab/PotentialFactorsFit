@@ -24,15 +24,15 @@ To better understand the molecular dynamics, the momentum balance was reduced in
 
 As the motion is look in relative terms, the kinetic energy of the system for an elastic collision will not change. This makes understanding the Potential energy change of the system more important as the collision will depend on it. In the past, many functions were developed to calculate the potential energy by considering simple cases like Hard Spheres, Hard Spheres with attraction, Hard spheres with attraction with quantum effects, simple collision theory, modified collision theory, etc. 
 
-In any case, the calculation of $V_eff(r) = V(r) + \epsilon b^{2}/r^{2}$ where b is the impact parameter which is the perpendicular distance from the extension of ν to the origin where origin being the molecule to which system is relative and r is the distance between two molecules, is important as it considers the centrifugal potential term ($\epsilon b^{2}/r^{2}$) and depending on its value it is determined if the collision is reactive or not. The condition for reactive collision is collision energy (Kinetic Energy) should be greater than centrifugal potential. While fitting the potential we will not consider the centrifugal potential as it is calculated by MESS and the potential we fitt will be $V(r)$ or $V_eff(r)$.
+In any case, the calculation of $V_eff(r) = V(r) + \epsilon b^{2}/r^{2}$ where b is the impact parameter which is the perpendicular distance from the extension of ν to the origin where origin being the molecule to which system is relative and r is the distance between two molecules, is important as it considers the centrifugal potential term ($\epsilon b^{2}/r^{2}$) and depending on its value it is determined if the collision is reactive or not. The condition for reactive collision is collision energy (Kinetic Energy) should be greater than centrifugal potential. While fitting the potential we will not consider the centrifugal potential as it is calculated by MESS and the potential we fit will be $V(r)$ or $V_eff(r)$.
 
 Various potential functions have been used to give an estimate of the Potential energy. A few of the functions are the Lennard Jones, Buckingham, fitting via power law function, etc. These functions were cross-validated against experimental data of the Nobel gas attractions. 
 
 ##### Lennard Jones (6-12) Potential 
-$ V_{LJ}(r) = \epsilon((\sigma/r)^{12} - (\sigma/r)^{6}) $
+$V_{LJ}(r) = \epsilon((\sigma/r)^{12} - (\sigma/r)^{6})$
 
 ##### Buckingham Potential
-$ V_(r) = A exp(-B r) - C / r^{6} $
+$V_(r) = A exp(-B r) - C / r^{6}$
 
 Buckingham Potential is an improvement on LJ 6-12 potential by modifying the repulsive term $\epsilon((\sigma/r)^{12}$ of Lennard-Jones with $A exp(-B r)$ as physically the repulsive potential changes exponentially with distance r.
 
@@ -41,7 +41,7 @@ The key point to remember is these potentials were developed to estimate the van
 As MESS only considers the -C/r^n term, n can be considered as a float instead of an integer to factor in the inaccuracies caused by the removal of the terms of the Taylor series.
 
 ##### Modified Buckingham Potential
-$ V_(r) = A exp(-B r) - C / r^{n} $
+$V_(r) = A exp(-B r) - C / r^{n}$
 
 Hence, for the fitting purpose, we use Modified Buckingham Potential, which has a physically correct expression for repulsion and a mathematically convenient expression for attraction potential. Adding a repulsion term enables the curve_fit routine to fit the Buckingham Potential to Morse Potential for the whole range of r values.
 
